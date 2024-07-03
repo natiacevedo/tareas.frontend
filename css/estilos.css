@@ -1,0 +1,99 @@
+:root{
+    --primary: white;
+    --secondary: #212529;
+    --grey: rgb(108, 117, 125);
+    --CTA: #0B7A75;
+    --error: rgb(206, 20, 20);
+}
+
+img{
+    width: 100%;
+}
+
+/* LOGIN */
+
+#login{
+    border-bottom: var(--primary) 1px solid;
+}
+
+.imgLogin{
+    width: 60%;
+}
+
+#index{
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.imgLogo{
+    width: 80px;
+}
+
+.nav-link{
+    color: var(--primary);
+}
+
+.nav-link:active, .nav-link:hover, .nav-link:focus{
+    color: var(--CTA);
+}
+
+.btn-login{
+    color: var(--primary);
+    border: var(--primary) 1px solid;
+}
+
+.btn-login:hover{
+    color: var(--secondary);
+    background-color: var(--primary);
+}
+
+.btn-signup{
+    background-color: var(--CTA);
+    color: var(--primary);
+}
+
+.btn-signup:hover{
+    background-color: var(--CTA);
+    opacity: 0.8;
+    color: var(--primary);
+}
+
+.error{
+    color: var(--error);
+    margin-top: 10px;
+}
+
+.inputs-form{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* SIDEBAR */
+
+#sidebar{
+    height: 100vh;
+    width: 200px;
+}
+
+.hoverList:hover{
+    opacity: 0.6;
+}
+
+/* TABLE */
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td,
+th {
+  padding: 10px;
+}

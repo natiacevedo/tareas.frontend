@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <a href="index.html">Regresar</a>
+
+        <form>
+            <div>
+                <label for="editar-asunto">Asunto:</label>
+                <input type="text" id="editar-asunto" />
+            </div>
+            <div>
+                <label for="editar-equipo">Equipo:</label>
+                <select id="editar-equipo">
+                    <option value="grafico">Diseño Gráfico</option>
+                    <option value="web">Diseño UX/UI</option>
+                    <option value="marketing">Marketing y publicidad</option>
+                    <option value="multimedia">Producción multimedia</option>
+                    <option value="admin">Administración y recursos humanos</option>
+                </select>
+            </div>
+            <div>
+                <label for="editar-usuario">Persona asignada:</label>
+                <input type="text" id="editar-usuario" />
+            </div>
+            <div>
+                <label for="editar-fecha">Fecha de entrega:</label>
+                <input type="text" id="editar-fecha" />
+            </div>
+            <div>
+                <label for="editar-prioridad">Prioridad:</label>
+                <select id="editar-prioridad">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+            </div>
+            <div>
+                <label for="editar-desc">Descripción de la tarea:</label>
+                <textarea name="desc" id="editar-desc"></textarea>
+            </div>
+            <div>
+                <label for="editar-estado">Prioridad:</label>
+                <select id="editar-estado">
+                    <option value="sin comenzar">Sin comenzar</option>
+                    <option value="proceso">En proceso</option>
+                    <option value="terminado">Terminado</option>
+                </select>
+            </div>
+            <input type="button" id="boton-actualizar-tarea" value="Actualizar" />
+        </form>
+    </div>
+    <div id="editar-tarea-error" class="error"></div>
+    <script src='js/editar-tarea.js' type="module"></script>
+</body>
+</html>
