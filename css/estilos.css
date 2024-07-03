@@ -2,12 +2,25 @@
     --primary: white;
     --secondary: #212529;
     --grey: rgb(108, 117, 125);
+    --fondo: rgb(239, 240, 241);
     --CTA: #0B7A75;
     --error: rgb(206, 20, 20);
 }
 
 img{
     width: 100%;
+}
+
+body{
+    background-color: var(--fondo);
+}
+
+a{
+    text-decoration: none;
+}
+
+.fontSize{
+    font-size: 1.5rem;
 }
 
 /* LOGIN */
@@ -72,15 +85,61 @@ img{
     margin-top: 10px;
 }
 
-/* SIDEBAR */
+/* HOME */
 
-#sidebar{
-    height: 100vh;
-    width: 200px;
+/* Barra para agregar tareas */
+
+.fondoPrimary{
+    background-color: var(--primary);
+    padding: 20px;
 }
 
-.hoverList:hover{
+/* Filtrado de tareas */
+
+form{
+    margin-top: 20px;
+}
+
+#home button[type="button"]{
+    background-color: var(--primary);
+    border: var(--CTA) 1px solid;
+    color: var(--CTA);
+    padding: 3px 40px;
+    width: 100%;
+    max-width: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+#home button[type="button"]:hover{
     opacity: 0.6;
+    cursor: pointer;
+}
+
+#home input[type="text"], select{
+    color: var(--secondary);
+    padding: 3px 40px 3px 20px;
+    border: none;
+    width: 100%;  
+    max-width: 250px; 
+}
+
+#home input[type="text"]:focus, select:focus{
+    outline: var(--secondary) .5px solid;
+}
+
+.boton-nueva-tarea{
+    background-color: var(--CTA);
+    color: var(--primary);
+    padding: 6px 10px;
+    border: var(--CTA) 1px solid;
+    transition: all 0.3s ease-in-out;
+}
+
+.boton-nueva-tarea:hover{
+    color: var(--CTA);
+    border: var(--CTA) 1px solid;
+    background-color: var(--primary);
+    cursor: pointer;
 }
 
 /* TABLE */
@@ -88,12 +147,38 @@ img{
 table,
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid var(--grey);
   border-collapse: collapse;
   text-align: center;
+  color: var(--secondary);
+}
+
+table {
+  width: 100%;
 }
 
 td,
 th {
-  padding: 10px;
+    padding: 10px;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+    .contenido-filtros{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .contenido-filtros{
+        margin: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
 }

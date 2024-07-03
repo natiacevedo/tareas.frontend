@@ -8,7 +8,7 @@ eventoClickCerrarSesion();
 const mostrarListaTareas = (data) => {
     imprimir("lista-error",  "");
     
-    const headerListado = "<tr><th>ID</th><th>Asunto</th><th>Equipo</th><th>Usuario</th><th>Fecha de entrega</th><th>Prioridad</th><th>Descripción</th><th>Estado</th></tr>";
+    const headerListado = "<tr><th>Asunto</th><th>Equipo</th><th>Usuario</th><th>Fecha de entrega</th><th>Prioridad</th><th>Estado</th></tr>";
 
     const tareas = data.map((tarea) => new Tarea(tarea.id, tarea.asunto,
         tarea.equipo, tarea.usuario, tarea.fechaEntrega, tarea.prioridad, tarea.descripcion, tarea.estado).mostrarEnLista());
