@@ -25,7 +25,7 @@ const manejarErrores = (error = new Error("Error desconocido")) => {
 }
 
 export class RequestsAPI {
-    static urlBaseBackend = "https://tareas-backend-rhww.onrender.com/";
+    static urlBaseBackend = "https://tareas-backend-rhww.onrender.com";
 
     static login(email, password) {
         const body = JSON.stringify({email, password});
