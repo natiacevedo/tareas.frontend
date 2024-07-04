@@ -5,6 +5,27 @@
     --fondo: rgb(239, 240, 241);
     --CTA: #0B7A75;
     --error: rgb(206, 20, 20);
+    --hover: #dce2e8;
+}
+
+@font-face {
+    font-family: 'Cardillac';
+    src: url('../fonts/Cardillac-Medium.eot');
+    src: local('../fonts/Cardillac Medium'), local('Cardillac-Medium'),
+        url('../fonts/Cardillac-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Cardillac-Medium.woff2') format('woff2'),
+        url('../fonts/Cardillac-Medium.woff') format('woff'),
+        url('../fonts/Cardillac-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neometric Alt Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neometric Alt Regular'), 
+    url('../fonts/Neometric-AltRegular.woff') format('woff');
 }
 
 img{
@@ -13,6 +34,12 @@ img{
 
 body{
     background-color: var(--fondo);
+    font-family: 'Neometric Alt Regular', sans-serif;
+    font-size: smaller;
+}
+
+main{
+    margin: 20px 10px;
 }
 
 a{
@@ -21,6 +48,7 @@ a{
 
 .fontSize{
     font-size: 1.5rem;
+    margin-bottom: 0 !important;
 }
 
 /* LOGIN */
@@ -106,6 +134,7 @@ form{
     color: var(--CTA);
     padding: 3px 40px;
     width: 100%;
+    
     max-width: 250px;
     transition: all 0.3s ease-in-out;
 }
@@ -115,16 +144,27 @@ form{
     cursor: pointer;
 }
 
-#home input[type="text"], select{
+input[type="text"], select, textarea{
     color: var(--secondary);
     padding: 3px 40px 3px 20px;
     border: none;
     width: 100%;  
+}
+
+.maxwidth{
     max-width: 250px; 
 }
 
-#home input[type="text"]:focus, select:focus{
+input[type="text"]:focus, select:focus, textarea:focus{
     outline: var(--secondary) .5px solid;
+}
+
+#boton-filtro, .boton-nueva-tarea, .usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
 }
 
 .boton-nueva-tarea{
@@ -147,14 +187,24 @@ form{
 table,
 th,
 td {
-  border: 1px solid var(--grey);
   border-collapse: collapse;
   text-align: center;
-  color: var(--secondary);
+  border-bottom: var(--CTA) 1px solid;
 }
 
 table {
   width: 100%;
+}
+
+.item-lista-tarea{
+    background-color: var(--fondo);
+    transition: all 0.3s ease-in-out;
+}
+
+.item-lista-tarea:hover{
+    background-color: var(--hover);
+    cursor: pointer;
+    transform: scale(1.01);
 }
 
 td,
@@ -162,10 +212,86 @@ th {
     padding: 10px;
 }
 
+/* PÁGINA DE DETALLE */
+
+.boton-regresar{
+    color: var(--CTA);
+}
+
+#detalle{
+    margin-top: 20px;
+}
+
+#botones-detalle{
+    margin: 20px;
+    gap: 30px;
+}
+
+#boton-editar-tarea, #boton-nueva-tarea, #boton-actualizar-tarea{
+    background-color: var(--CTA);
+    color: var(--primary);
+    padding: 3px;
+    width: 30%;
+    border: var(--CTA) 1px solid;
+    transition: all 0.3s ease-in-out;
+}
+
+#boton-eliminar-tarea{
+    background-color: var(--fondo);
+    border: var(--CTA) 1px solid;
+    color: var(--CTA);
+    padding: 3px;
+    width: 30%;
+    transition: all 0.3s ease-in-out;
+}
+
+#boton-editar-tarea:hover, #boton-eliminar-tarea:hover, #boton-nueva-tarea:hover, #boton-actualizar-tarea:hover{
+    opacity: 0.5;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* PÁGINA NUEVA TAREA */
+
+#nueva-tarea form div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#nueva-tarea .form-control, .form-select {
+    box-sizing: border-box !important;
+    width: 250px;
+    padding: 3px 40px 3px 20px;
+}
+
+/* PÁGINA EDITAR TAREA */
+
+#editar-tarea form div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#editar-tarea form div div{
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
+    #filtros{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -20px;
+    }
+    
     .contenido-filtros{
         display: flex;
         flex-direction: column;
@@ -181,4 +307,16 @@ th {
         justify-content: space-between;
         gap: 10px;
     }
+}
+
+.select-sin-comenzar {
+    color: #ff0000; /* Rojo */
+}
+
+.select-en-proceso {
+    color: #ffa500; /* Naranja */
+}
+
+.select-terminado {
+    color: #008000; /* Verde */
 }

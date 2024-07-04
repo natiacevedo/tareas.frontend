@@ -3,65 +3,89 @@
 
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Agregar Tarea</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Agregar Tarea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div class="contenedor">
-        <a href="index.html">Regresar</a>
-
-        <form>
-            <div>
-                <label for="nuevo-asunto">Asunto:</label>
-                <input type="text" id="nuevo-asunto" />
-            </div>
-            <div>
-                <label for="nuevo-equipo">Equipo</label>
-                <select id="nuevo-equipo">
-                    <option value="grafico">Diseño Gráfico</option>
-                    <option value="web">Diseño UX/UI</option>
-                    <option value="marketing">Marketing y publicidad</option>
-                    <option value="multimedia">Producción multimedia</option>
-                    <option value="admin">Administración y recursos humanos</option>
-                </select>
-            </div>
-            <div>
-                <label for="nuevo-usuario">Persona asignada:</label>
-                <input type="text" id="nuevo-usuario" />
-            </div>
-            <div>
-                <label for="nueva-fecha">Fecha de entrega:</label>
-                <input type="text" id="nueva-fecha" />
-            </div>
-            <div>
-                <label for="nueva-prioridad">Prioridad:</label>
-                <select id="nueva-prioridad">
-                    <option value="baja">Baja</option>
-                    <option value="media">Media</option>
-                    <option value="alta">Alta</option>
-                </select>
-            </div>
-            <div>
-                <label for="nueva-desc">Descripción de la tarea:</label>
-                <textarea name="desc" id="nueva-desc"></textarea>
-            </div>
-            <div>
-                <label for="nuevo-estado">Prioridad:</label>
-                <select id="nuevo-estado">
-                    <option value="sin comenzar">Sin comenzar</option>
-                    <option value="proceso">En proceso</option>
-                    <option value="terminado">Terminado</option>
-                </select>
-            </div>
-            <input type="button" id="boton-nueva-tarea" value="Crear" />
-        </form>
+    <div class="bg-dark">
+        <header class="container d-flex align-items-center justify-content-between py-3">
+            <div class="mb-2 mb-md-0">
+              <a href="home.html" class="d-flex align-items-center text-decoration-none">
+                <img src="img/logoheader.png" alt="Logo de Taskboard" class="imgLogo text-center">
+              </a>
+            </div>   
+            
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <strong><i class="fas fa-user"></i> Usuario</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small">
+              <li><a class="dropdown-item" id="boton-logout" href="#">Cerrar sesión</a></li>
+            </ul>
+          </div>
+        </header>
     </div>
-    <div id="nueva-tarea-error" class="error"></div>
+
+    <main id="nueva-tarea">
+        <div class="container">
+            <a href="home.html" class="boton-regresar"><i class="fas fa-arrow-left"></i> Todas las tareas</a>
+
+            <form class="card">
+                <div class="my-4">
+                    <div>
+                        <input type="text" placeholder="Asunto" id="nuevo-asunto" class="maxwidth rounded shadow form-control" />
+                    </div>
+                    <div>
+                        <select id="nuevo-equipo" aria-label="Equipo asignado para la tarea" class="maxwidth rounded shadow form-select">
+                            <option value="" disabled selected hidden>Equipo asignado</option>
+                            <option value="Diseño Gráfico">Diseño Gráfico</option>
+                            <option value="Diseño UX/UI">Diseño UX/UI</option>
+                            <option value="Marketing y publicidad">Marketing y publicidad</option>
+                            <option value="Producción multimedia">Producción multimedia</option>
+                            <option value="Administración y recursos humanos">Administración y recursos humanos</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" id="nuevo-usuario" placeholder="Persona asignada" class="maxwidth rounded shadow form-control" />
+                    </div>
+                    <div>
+                        <input type="text" id="nueva-fecha" placeholder="Fecha de entrega" class="maxwidth rounded shadow form-control"/>
+                    </div>
+                    <div>
+                        <select id="nueva-prioridad" aria-label="Prioridad de la tarea" class="maxwidth rounded shadow form-select" >
+                            <option value="" disabled selected hidden>Prioridad de la tarea</option>
+                            <option value="Baja">Baja</option>
+                            <option value="Media">Media</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea name="desc" id="nueva-desc" class="maxwidth rounded shadow form-control" placeholder="Descripción de la tarea"></textarea>
+                    </div>
+                    <div>
+                        <select id="nuevo-estado" aria-label="Estado de la tarea" class="maxwidth rounded shadow form-select">
+                            <option value="" disabled selected hidden>Estado de la tarea</option>
+                            <option value="Sin comenzar">Sin comenzar</option>
+                            <option value="En proceso">En proceso</option>
+                            <option value="Terminado">Terminado</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <div class="d-flex justify-content-center">
+                <input type="button" id="boton-nueva-tarea" class="rounded shadow mt-4" value="Agregar" />
+            </div>
+        </div>
+        <div id="nueva-tarea-error" class="error"></div>
+    </main>
+
     <script src='js/nueva-tarea.js' type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

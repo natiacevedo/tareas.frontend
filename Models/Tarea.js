@@ -20,9 +20,6 @@ export default class Tarea {
       this.estado = estado;
     }
     
-    //<td>${this.id}</td>
-    //<td>${this.descripcion}</td>
-    
     mostrarEnLista() {
       return `
         <tr class="item-lista-tarea" id="${this.id}">
@@ -31,14 +28,13 @@ export default class Tarea {
           <td>${this.usuario}</td>
           <td>${this.fechaEntrega}</td>
           <td>${this.prioridad}</td>
-          <td>${this.estado}</td>
+          <td class="estado">${this.estado}</td>
         </tr>
       `;
     }
     mostrarDetalle() {
       return `
       <table>
-        <tr><td><b>ID</b></td><td>${this.id}</td></tr>
         <tr><td><b>Asunto</b></td><td>${this.asunto}</td></tr>
         <tr><td><b>Equipo</b></td><td>${this.equipo}</td></tr>
         <tr><td><b>Usuario</b></td><td>${this.usuario}</td></tr>
