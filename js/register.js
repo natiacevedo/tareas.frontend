@@ -1,6 +1,6 @@
 import {validarSesion, obtenerValorInput, imprimir} from "../utils/helpers.js";
 import {RequestsAPI} from "../RequestsAPI.js";
-validarSesion();
+/* validarSesion(); */
 
   document
     .querySelector("#form-register-submit")
