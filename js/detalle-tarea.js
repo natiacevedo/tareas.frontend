@@ -1,8 +1,9 @@
 import Tarea from "../Models/Tarea.js";
 import { RequestsAPI } from "../RequestsAPI.js";
-import { imprimir, validarSesion } from "../utils/helpers.js";
+import { aplicarNombreUsuario, imprimir, validarSesion } from "../utils/helpers.js";
 
 validarSesion();
+aplicarNombreUsuario();
 
 const params = new URLSearchParams(window.location.search);
 const idTarea = params.get("id");

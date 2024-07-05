@@ -1,9 +1,10 @@
 import Tarea from "../Models/Tarea.js";
 import { RequestsAPI } from "../RequestsAPI.js";
-import { imprimir, obtenerValorInput, validarSesion, eventoClickCerrarSesion } from "../utils/helpers.js";
+import { imprimir, obtenerValorInput, validarSesion, eventoClickCerrarSesion, aplicarNombreUsuario } from "../utils/helpers.js";
 
 validarSesion();
 eventoClickCerrarSesion();
+aplicarNombreUsuario();
 
 const mostrarListaTareas = (data) => {
     imprimir("lista-error",  "");

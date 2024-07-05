@@ -33,3 +33,13 @@ export const eventoClickCerrarSesion = () => {
         })
     })
 }
+
+export const aplicarNombreUsuario = () => {
+    const usuario = JSON.parse(sessionStorage.getItem("user"));
+    if (usuario && usuario.nombre) {
+        const nombreCapitalizado = usuario.nombre.charAt(0).toUpperCase() + usuario.nombre.slice(1);
+        const usuarioElemento = document.querySelector(".usuario");
+        
+        usuarioElemento.innerHTML = `<i class="fas fa-user"></i> ${nombreCapitalizado}`;
+    }
+}

@@ -1,7 +1,9 @@
 import { RequestsAPI } from "../RequestsAPI.js";
-import { imprimir, obtenerValorInput, validarSesion } from "../utils/helpers.js";
+import { imprimir, obtenerValorInput, validarSesion, aplicarNombreUsuario } from "../utils/helpers.js";
 
 validarSesion()
+
+aplicarNombreUsuario()
 
 document.querySelector("#boton-nueva-tarea").addEventListener("click", () => {
     const asunto = obtenerValorInput("nuevo-asunto");

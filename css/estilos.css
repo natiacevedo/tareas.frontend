@@ -1,22 +1,12 @@
-:root{
-    --primary: white;
-    --secondary: #212529;
-    --grey: rgb(108, 117, 125);
-    --fondo: rgb(239, 240, 241);
-    --CTA: #0B7A75;
-    --error: rgb(206, 20, 20);
-    --hover: #dce2e8;
-}
-
-@font-face {
+/* @font-face {
     font-family: 'Cardillac';
-    src: url('../fonts/Cardillac-Medium.eot');
-    src: local('../fonts/Cardillac Medium'), local('Cardillac-Medium'),
-        url('../fonts/Cardillac-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Cardillac-Medium.woff2') format('woff2'),
-        url('../fonts/Cardillac-Medium.woff') format('woff'),
-        url('../fonts/Cardillac-Medium.ttf') format('truetype');
-    font-weight: 500;
+    src: url('../fonts/Cardillac-Regular.ttf');
+    src: local('Cardillac Regular'), local('Cardillac-Regular'),
+        url('..fonts/Cardillac-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Cardillac-Regular.woff2') format('woff2'),
+        url('../fonts/Cardillac-Regular.woff') format('woff'),
+        url('../fonts/Cardillac-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -25,7 +15,17 @@
     font-style: normal;
     font-weight: normal;
     src: local('Neometric Alt Regular'), 
-    url('../fonts/Neometric-AltRegular.woff') format('woff');
+    url('../fonts/NeometricAlt-Regular.woff') format('woff');
+} */
+
+:root{
+    --primary: white;
+    --secondary: #212529;
+    --grey: rgb(108, 117, 125);
+    --fondo: rgb(239, 240, 241);
+    --CTA: #0B7A75;
+    --error: #ce1414;
+    --hover: #dce2e8;
 }
 
 img{
@@ -33,8 +33,8 @@ img{
 }
 
 body{
-    background-color: var(--fondo);
-    font-family: 'Neometric Alt Regular', sans-serif;
+    background-color: var(--fondo);/* 
+    font-family: 'Neometric Alt Regular', sans-serif; */
     font-size: smaller;
 }
 
@@ -267,6 +267,10 @@ th {
     padding: 3px 40px 3px 20px;
 }
 
+.form-control, .form-select {
+    font-size: smaller;
+}
+
 /* PÁGINA EDITAR TAREA */
 
 #editar-tarea form div{
@@ -307,16 +311,4 @@ th {
         justify-content: space-between;
         gap: 10px;
     }
-}
-
-.select-sin-comenzar {
-    color: #ff0000; /* Rojo */
-}
-
-.select-en-proceso {
-    color: #ffa500; /* Naranja */
-}
-
-.select-terminado {
-    color: #008000; /* Verde */
 }

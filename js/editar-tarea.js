@@ -1,7 +1,8 @@
-import { validarSesion, imprimir, obtenerValorInput } from "../utils/helpers.js";
+import { validarSesion, imprimir, obtenerValorInput, aplicarNombreUsuario } from "../utils/helpers.js";
 import { RequestsAPI } from "../RequestsAPI.js";
 
 validarSesion();
+aplicarNombreUsuario();
 
 const params = new URLSearchParams(window.location.search);
 const idTarea = params.get("id");

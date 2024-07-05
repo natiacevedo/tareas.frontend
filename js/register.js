@@ -6,16 +6,15 @@ validarSesion();
     .querySelector("#form-register-submit")
     .addEventListener("click", () => {
       const nombre = obtenerValorInput("form-register-name");
-      const apellido = obtenerValorInput("form-register-lastname");
       const email = obtenerValorInput("form-register-email");
       const password = obtenerValorInput("form-register-password");
   
-      if (!nombre || !apellido || !email || !password) {
+      if (!nombre || !email || !password) {
         imprimir("form-register-error", "Por favor complete todos los campos");
         return;
       }
   
-      const body = JSON.stringify({ nombre, apellido, email, password });
+      const body = JSON.stringify({ nombre, email, password });
       RequestsAPI.register(body)
         .then(() => {
           document.location.replace("home.html");
