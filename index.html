@@ -13,21 +13,22 @@
             <div class="mt-4 mb-2 col-12 col-lg-5">
                 <h1 class="text-white p-1">Bienvenido a </h1>
                 <img src="img/logologin.png" alt="logo task-board" class="imgLogin">
-                <p class="text-white p-3">Únete a Taskboard y gestiona todas tus tareas sin esfuerzo. Organiza tu trabajo y no dejes que se te escape nada.</p>
+                <p class="text-white p-3">Únete a Taskboard y gestiona todas tus tareas y las de tu equipo sin esfuerzo. Organiza tu trabajo y no dejes que nada se te escape.</p>
             </div>
             <div class="col-12 col-lg-5">
                 <form id="login" class="d-flex flex-column mb-3 pb-3 align-items-center justify-content-center">
                     <input type="text" autocomplete="username" class="rounded mb-2 p-2 form-control" id="form-login-email" placeholder="Correo electrónico" required />
                     <input type="password" autocomplete="current-password" class="rounded mb-2 p-2 form-control" id="form-login-password" placeholder="Contraseña" required>
-                    <input type="button" id="form-login-submit" value="Iniciar sesión" class="w-100 btn btn-login" />
                     <div id="form-login-error" class="error"></div>
+                    <input type="button" id="form-login-submit" value="Iniciar sesión" class="w-100 btn btn-login" />
                 </form>
                 <form id="register" class="d-flex flex-column align-items-center justify-content-center">
                     <input type="text" name="name" autocomplete="username" id="form-register-name" placeholder="Nombre de la empresa o personal" class="rounded mb-2 p-2 form-control">
                     <input type="text" name="email" autocomplete="email" id="form-register-email" placeholder="Correo electrónico" class="rounded mb-2 p-2 form-control">
                     <input type="password" name="password" autocomplete="current-password" id="form-register-password" placeholder="Contraseña" class="rounded mb-2 p-2 form-control">
-                    <input type="button" id="form-register-submit" value="Registrarse" class="btn btn-signup w-100 mb-3">
+                    <div id="form-register-success" class="success"></div>
                     <div id="form-register-error" class="error"></div>
+                    <input type="button" id="form-register-submit" value="Registrarse" class="btn btn-signup w-100 mb-3">
                 </form>
             </div>
         </div>

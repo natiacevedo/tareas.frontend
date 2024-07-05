@@ -15,11 +15,11 @@ validarSesion();
         return;
       }
   
-      const body = JSON.stringify({ nombre, email, password });
+    const body = JSON.stringify({ nombre, email, password });
     RequestsAPI.register(body)
       .then(() => {
-          document.location.replace("home.html");
           console.log("Registro exitoso");
+          imprimir("form-register-success", "Registro exitoso, ya puedes iniciar sesión.");
       })
       .catch((error) => {
         imprimir("form-register-error", error);
