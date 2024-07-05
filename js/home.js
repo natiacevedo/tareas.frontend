@@ -3,8 +3,8 @@ import { RequestsAPI } from "../RequestsAPI.js";
 import { imprimir, obtenerValorInput, validarSesion, eventoClickCerrarSesion, aplicarNombreUsuario } from "../utils/helpers.js";
 
 validarSesion();
-eventoClickCerrarSesion();
 aplicarNombreUsuario();
+eventoClickCerrarSesion();
 
 const mostrarListaTareas = (data) => {
     imprimir("lista-error",  "");
