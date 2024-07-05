@@ -16,11 +16,12 @@ validarSesion();
       }
   
       const body = JSON.stringify({ nombre, email, password });
-      RequestsAPI.register(body)
-        .then(() => {
+    RequestsAPI.register(body)
+      .then(() => {
           document.location.replace("home.html");
-        })
-        .catch((error) => {
-          imprimir("form-register-error", error);
-        });
-    });
+          console.log("Registro exitoso");
+      })
+      .catch((error) => {
+        imprimir("form-register-error", error);
+      });
+  });
