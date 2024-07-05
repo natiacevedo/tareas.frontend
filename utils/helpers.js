@@ -20,7 +20,7 @@ export const validarSesion = () => {
         }
     } else {
         if (!estaEnPaginaPublica) {
-        document.location.replace("index.html");
+        document.location.replace("home.html");
     }
     }
 }
