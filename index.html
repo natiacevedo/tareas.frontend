@@ -23,11 +23,9 @@
                     <div id="form-login-error" class="error"></div>
                 </form>
                 <form id="register" class="d-flex flex-column align-items-center justify-content-center">
-                    <div class="inputs-form">
-                        <input type="text" name="name" id="form-register-name" placeholder="Nombre de la empresa o personal" class="rounded mb-2 p-2 form-control">
-                    </div>
-                    <input type="text" name="email" id="form-register-email" placeholder="Correo electrónico" class="rounded mb-2 p-2 form-control">
-                    <input type="password" name="password" id="form-register-password" placeholder="Contraseña" class="rounded mb-2 p-2 form-control">
+                    <input type="text" name="name" autocomplete="username" id="form-register-name" placeholder="Nombre de la empresa o personal" class="rounded mb-2 p-2 form-control">
+                    <input type="text" name="email" autocomplete="email" id="form-register-email" placeholder="Correo electrónico" class="rounded mb-2 p-2 form-control">
+                    <input type="password" name="password" autocomplete="current-password" id="form-register-password" placeholder="Contraseña" class="rounded mb-2 p-2 form-control">
                     <input type="button" id="form-register-submit" value="Registrarse" class="btn btn-signup w-100 mb-3">
                     <div id="form-register-error" class="error"></div>
                 </form>

@@ -2,6 +2,7 @@ import { RequestsAPI } from "../RequestsAPI.js";
 import { obtenerValorInput, imprimir, validarSesion } from "../utils/helpers.js";
 
 validarSesion();
+
 const botonLogin = document.querySelector("#form-login-submit");
 
 botonLogin.addEventListener("click", () => {
